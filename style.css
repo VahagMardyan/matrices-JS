@@ -1,0 +1,32 @@
+* {
+    margin: 1;
+    padding: 1;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+table {
+    width: 250px;
+    height: 250px;
+    border: 0.5px solid black;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+button {
+    cursor: pointer;
+}
+
+.tables,
+.product {
+    display: flex;
+    gap: 10px;
+}
