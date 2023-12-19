@@ -20,6 +20,9 @@ const determinantX = document.querySelector('.determinant-X');
 const determinantY = document.querySelector('.determinant-Y');
 
 const start = () => {
+
+    document.querySelector('.display').style.display = 'block';
+
     const nX = Number.parseInt(prompt('Enter value for rows for first matrix'));
     const mX = Number.parseInt(prompt('Enter value for columns for first matrix'));
 
@@ -106,7 +109,7 @@ const start = () => {
             tableSubtraction.append(row);
         }
     }
-    if (nX === mX) {
+    if (nX === mX && determinant(x) !== 0) {
         for (let i = 0; i < nX; i++) {
             const row = document.createElement('tr');
             for (let j = 0; j < mX; j++) {
@@ -117,7 +120,7 @@ const start = () => {
             inverseX.append(row);
         }
     }
-    if (nY === mY) {
+    if (nY === mY && determinant(y) !== 0) {
         for (let i = 0; i < nY; i++) {
             const row = document.createElement('tr');
             for (let j = 0; j < mY; j++) {

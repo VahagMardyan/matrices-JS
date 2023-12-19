@@ -5,6 +5,10 @@
     user-select: none;
 }
 
+.display {
+    display: none;
+}
+
 table {
     width: 250px;
     height: 250px;
