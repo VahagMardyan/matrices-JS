@@ -1,9 +1,17 @@
 import determinant from "./determinant.js";
 import product from "./product.js";
+import sum from "./sum.js";
+import { subtraction } from './subtraction.js';
+import inverse from "./inverse.js";
 
 const tableX = document.querySelectorAll('table')[0];
 const tableY = document.querySelectorAll(`table`)[1];
 const tableProduct = document.querySelectorAll('table')[2];
+const tableSum = document.querySelectorAll('table')[3];
+const tableSubtraction = document.querySelectorAll('table')[4];
+const inverseX = document.querySelectorAll('table')[5];
+const inverseY = document.querySelectorAll('table')[6];
+
 const startButton = document.querySelector(`button`);
 const reloadButton = document.querySelectorAll('button')[1];
 const matrixX = document.querySelector('.matrix-X');
@@ -36,10 +44,10 @@ const start = () => {
     }
 
     matrixX.innerHTML = `<i>X=Matrix(${nX}×${mX})=</i>`;
-    
+
     const rowsX = nX;
     const colsX = mX;
-    
+
     for (let i = 0; i < rowsX; i++) {
         const row = document.createElement('tr');
         for (let j = 0; j < colsX; j++) {
@@ -51,10 +59,10 @@ const start = () => {
     }
 
     matrixY.innerHTML = `<i>Y=Matrix(${nY}×${mY})=</i>`;
-    
+
     const rowsY = nY;
     const colsY = mY;
-    
+
     for (let i = 0; i < rowsY; i++) {
         const row = document.createElement('tr');
         for (let j = 0; j < colsY; j++) {
@@ -65,17 +73,59 @@ const start = () => {
         tableY.append(row);
     }
 
-    nX === mX ? determinantX.innerHTML = `<i>Det(x)=${determinant(x)}</i>` : null;
-    nY === mY ? determinantY.innerHTML = `<i>Det(y)=${determinant(y)}</i>` : null;
-    if(mX===nY) {
-        for(let i=0;i<nX;i++) {
+    nX === mX ? determinantX.innerHTML = `<i>Det(x)=${determinant(x)};</i>` : null;
+    nY === mY ? determinantY.innerHTML = `<i>Det(y)=${determinant(y)};</i>` : null;
+    if (mX === nY) {
+        for (let i = 0; i < nX; i++) {
             const row = document.createElement('tr');
-            for(let j=0;j<mY;j++) {
+            for (let j = 0; j < mY; j++) {
                 const col = document.createElement('td');
-                col.innerText = product(x,y)[i][j];
+                col.innerText = product(x, y)[i][j];
                 row.append(col);
             }
             tableProduct.append(row);
+        }
+    }
+    if (nX === nY && mX === mY) {
+        for (let i = 0; i < nX; i++) {
+            const row = document.createElement('tr');
+            for (let j = 0; j < mY; j++) {
+                const col = document.createElement('td');
+                col.innerText = sum(x, y)[i][j];
+                row.append(col);
+            }
+            tableSum.append(row);
+        }
+        for (let i = 0; i < nX; i++) {
+            const row = document.createElement('tr');
+            for (let j = 0; j < mY; j++) {
+                const col = document.createElement('td');
+                col.innerText = subtraction(x, y)[i][j];
+                row.append(col);
+            }
+            tableSubtraction.append(row);
+        }
+    }
+    if (nX === mX) {
+        for (let i = 0; i < nX; i++) {
+            const row = document.createElement('tr');
+            for (let j = 0; j < mX; j++) {
+                const col = document.createElement('td');
+                col.innerText = inverse(x)[i][j];
+                row.append(col);
+            }
+            inverseX.append(row);
+        }
+    }
+    if (nY === mY) {
+        for (let i = 0; i < nY; i++) {
+            const row = document.createElement('tr');
+            for (let j = 0; j < mY; j++) {
+                const col = document.createElement('td');
+                col.innerText = inverse(y)[i][j];
+                row.append(col);
+            }
+            inverseY.append(row);
         }
     }
 

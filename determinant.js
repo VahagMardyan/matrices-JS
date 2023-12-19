@@ -14,7 +14,7 @@ const determinant = (matrix) => {
     return det;
 }
 
-const getSubMatrix = (matrix, rowToRemove, colToRemove) => {
+export const getSubMatrix = (matrix, rowToRemove, colToRemove) => {
     return matrix.filter((row, rowIndex) => rowIndex !== rowToRemove)
         .map(row => row.filter((_, colIndex) => colIndex !== colToRemove));
 }
