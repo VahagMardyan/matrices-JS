@@ -1,6 +1,6 @@
 const product = (matrixA,matrixB) => {
     if(matrixA[0].length !== matrixB.length) {
-        return alert(`Error`);
+        return console.error(`Error`);
     }
     const result = new Array(matrixA.length);
     for(let i=0;i<result.length;i++) {

@@ -88,6 +88,8 @@ const start = () => {
             }
             tableProduct.append(row);
         }
+    } else {
+        tableProduct.innerHTML = `<p>Can't calculate X×Y</p>`;
     }
     if (nX === nY && mX === mY) {
         for (let i = 0; i < nX; i++) {
@@ -99,6 +101,11 @@ const start = () => {
             }
             tableSum.append(row);
         }
+    } else {
+        tableSum.innerHTML = `<p>Can't calculate X+Y</p>`;
+    }
+
+    if (nX === nY && mX === mY) {
         for (let i = 0; i < nX; i++) {
             const row = document.createElement('tr');
             for (let j = 0; j < mY; j++) {
@@ -108,7 +115,10 @@ const start = () => {
             }
             tableSubtraction.append(row);
         }
+    } else {
+        tableSubtraction.innerHTML = `<p>Can't calculate X-Y</p>`;
     }
+
     if (nX === mX && determinant(x) !== 0) {
         for (let i = 0; i < nX; i++) {
             const row = document.createElement('tr');
@@ -119,7 +129,10 @@ const start = () => {
             }
             inverseX.append(row);
         }
+    } else {
+        inverseX.innerHTML = `<p>X<sup>-1</sup> is not defined</p>`;
     }
+
     if (nY === mY && determinant(y) !== 0) {
         for (let i = 0; i < nY; i++) {
             const row = document.createElement('tr');
@@ -130,6 +143,8 @@ const start = () => {
             }
             inverseY.append(row);
         }
+    } else {
+        inverseY.innerHTML = `<p>Y<sup>-1</sup> is not defined</p>`;
     }
 
 }

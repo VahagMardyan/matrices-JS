@@ -1,6 +1,6 @@
 const sum = (matrixA,matrixB) => {
     if(matrixA.length !== matrixB.length || matrixA.length!==matrixB[0].length) {
-        return alert(`Error`);
+        return console.error(`Error`);
     }
     const result = new Array(matrixA.length);
     for(let i=0;i<result.length;i++) {

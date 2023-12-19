@@ -91,3 +91,10 @@ button {
     border: 1px solid black;
     cursor: pointer;
 }
+
+p {
+    color: red;
+    text-align: center;
+    margin-block: 75px;
+    font-size: 18px;
+}

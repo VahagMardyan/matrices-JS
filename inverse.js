@@ -3,7 +3,7 @@ import {getSubMatrix} from "./determinant.js";
 
 const inverse = (matrix) => {
     if (matrix.length !== matrix[0].length) {
-        return alert('Matrix must be square to have an inverse');
+        return console.error('Matrix must be square to have an inverse');
     }
     const det = determinant(matrix);
     const result = new Array(matrix.length);
