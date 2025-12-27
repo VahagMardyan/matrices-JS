@@ -98,3 +98,69 @@ p {
     margin-block: 75px;
     font-size: 18px;
 }
+
+/* Portrait smartphones */
+@media screen and (max-width: 600px) {
+    table {
+        width: 150px;
+        height: 150px;
+        font-size: 1.2em;
+    }
+
+    .tables,
+    .product,
+    .sum,
+    .subtraction,
+    .inverse-matrices,
+    .btns {
+        width: 95%;
+        flex-direction: column;
+        margin-left: 0;
+        gap: 5px;
+    }
+
+    .math-functions {
+        grid-template-columns: 1fr; /* Stack vertically */
+        gap: 10px;
+    }
+
+    button {
+        width: 80%;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 16px;
+        margin-block: 50px;
+    }
+}
+
+/* Landscape smartphones (short height) */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    table {
+        width: 120px;
+        height: 120px;
+        font-size: 1em;
+    }
+
+    .tables,
+    .product,
+    .sum,
+    .subtraction,
+    .inverse-matrices,
+    .btns {
+        width: 90%;
+        gap: 5px;
+    }
+
+    button {
+        height: 35px;
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 14px;
+        margin-block: 30px;
+    }
+}
