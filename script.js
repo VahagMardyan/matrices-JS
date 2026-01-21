@@ -146,7 +146,6 @@ const start = () => {
     } else {
         inverseY.innerHTML = `<p>Y<sup>-1</sup> is not defined</p>`;
     }
-
 }
 
 const keyPress = (key, func) => {
