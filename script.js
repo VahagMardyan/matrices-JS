@@ -55,7 +55,6 @@ const start = () => {
         const row = document.createElement('tr');
         for (let j = 0; j < colsX; j++) {
             const col = document.createElement('td');
-            col.innerText = x[i][j];
             row.append(col);
         }
         tableX.append(row);
